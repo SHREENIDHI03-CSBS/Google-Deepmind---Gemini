@@ -16,52 +16,7 @@ Gemini is a family of multimodal models designed to process and reason over both
 - LoRA + QLoRA support for lightweight fine-tuning
 - Training recipes for common datasets (e.g., VQAv2, COCO Captions, OK-VQA)
 
-## 🧱 Model Architecture
-
-# Gemini: Multi-Modal Language and Vision Research (Unofficial)
-
-Welcome to the **Gemini Research Project** — an open-source, multi-modal architecture inspired by Google DeepMind's *Gemini* family of models. This repository contains code, configurations, and training workflows to reproduce core components of a Gemini-style architecture, enabling joint reasoning over text and images.
-
-> ⚠️ Disclaimer: This repository is a research reproduction and is **not affiliated with Google DeepMind**. All insights are based on publicly available information and reverse engineering research papers, blog posts, and model outputs.
-
----
-
-## 📌 Table of Contents
-
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Model Architecture](#model-architecture)
-- [Getting Started](#getting-started)
-- [Training Setup](#training-setup)
-- [Inference Examples](#inference-examples)
-- [Data Formats](#data-formats)
-- [Citations](#citations)
-- [License](#license)
-
----
-
-## 🧠 Overview
-
-Gemini is a family of multimodal models designed to process and reason over both language and vision inputs in a tightly integrated manner. The goal of this repo is to:
-- Provide a flexible baseline implementation of Gemini-like multi-modal transformers.
-- Support inference and fine-tuning across text, images, or mixed input streams.
-- Allow research exploration into cross-modal fusion, attention routing, and token alignment.
-
----
-
-## ✨ Key Features
-
-- Multi-stream input processing (text and vision embeddings)
-- Dual encoder-decoder transformer blocks
-- Support for BPE (Byte Pair Encoding) and Patch embeddings
-- Image adapter modules for various vision backbones (e.g. CLIP ViT-B, ResNet)
-- Cross-attention fusion between modalities
-- LoRA + QLoRA support for lightweight fine-tuning
-- Training recipes for common datasets (e.g., VQAv2, COCO Captions, OK-VQA)
-
----
-
-## 🧱 Model Architecture
+## Model Architecture
 
 
                     +-----------------+
@@ -87,32 +42,38 @@ Gemini is a family of multimodal models designed to process and reason over both
                     |     Output Tokens    |
                     +----------------------+
 
-Requirements
+## Requirements :
 Python 3.10+
 
 PyTorch ≥ 2.0
 
 torchvision, transformers, accelerate
 
-CUDA-enabled GPU (NVIDIA A100 or similar recommended)
+CUDA-enabled GPU
+ 
+## Supported Tasks:
+Image Captioning
 
-License
-This project is licensed under the Apache-2.0 License. See the LICENSE file for details.
+Visual Question Answering
 
-## Technical Stack for a Gemini-Based Application
+Text-Image Matching
 
-| Layer/Component        | Technology/Service                        | Details & Purpose                                                                                     |
-|------------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------|
-| **Frontend**           | React (Vite)                              | Modern web UI framework for building interactive user interfaces[4].                                 |
-| **Backend**            | Python (LangGraph, FastAPI)               | Handles API requests, orchestrates research agent logic, and integrates with Gemini API[4].          |
-| **AI Model API**       | Google Gemini API                         | Provides access to Gemini multimodal generative models for text, image, code, and audio tasks[1][3][4]. |
-| **Agent Framework**    | LangGraph                                 | Enables research-augmented conversational agents and workflow orchestration[4].                      |
-| **Database**           | PostgreSQL                                | Stores assistants, threads, runs, and long-term memory for agents[4].                                |
-| **Pub/Sub & Caching**  | Redis                                     | Manages pub-sub communication for streaming outputs and caching[4].                                  |
-| **Containerization**   | Docker, Docker Compose                    | For packaging and deploying the fullstack application[4].                                            |
-| **Environment Config** | .env files                                | Manages API keys and environment variables (e.g., GEMINI_API_KEY)[4].                                |
-| **Cloud Platform**     | Google Cloud Vertex AI (optional)         | For scalable, managed deployment and access to Gemini models[2][6].                                  |
-| **Authentication**     | API Keys (Google Gemini API)              | Secures access to Gemini models and related services[4].                                             |
-| **Optional Integrations** | Google Search API, URL Context Tool    | Enhances research capabilities with web search and contextual retrieval[4][5].                       |
+Multimodal Reasoning
 
-This stack enables rapid prototyping and scalable deployment of applications powered by Google DeepMind's Gemini models, supporting multimodal input/output, research workflows, and interactive web experiences[1] 
+## Technical Stack:
+
+| Layer/Component        | Technology/Service                        |  
+|------------------------|-------------------------------------------| 
+| **Frontend**           | React (Vite)                              |  
+| **Backend**            | Python (LangGraph, FastAPI)               |  
+| **AI Model API**       | Google Gemini API                         |  
+| **Agent Framework**    | LangGraph                                 | 
+| **Database**           | PostgreSQL                                |  
+| **Pub/Sub & Caching**  | Redis                                     | 
+| **Containerization**   | Docker, Docker Compose                    |  
+| **Environment Config** | .env files                                |  
+| **Cloud Platform**     | Google Cloud Vertex AI (optional)         | 
+| **Authentication**     | API Keys (Google Gemini API)              |  
+
+## License :
+This project is licensed under the Apache-2.0 License.  
