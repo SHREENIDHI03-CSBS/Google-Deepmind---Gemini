@@ -18,6 +18,51 @@ Gemini is a family of multimodal models designed to process and reason over both
 
 ## 🧱 Model Architecture
 
+# Gemini: Multi-Modal Language and Vision Research (Unofficial)
+
+Welcome to the **Gemini Research Project** — an open-source, multi-modal architecture inspired by Google DeepMind's *Gemini* family of models. This repository contains code, configurations, and training workflows to reproduce core components of a Gemini-style architecture, enabling joint reasoning over text and images.
+
+> ⚠️ Disclaimer: This repository is a research reproduction and is **not affiliated with Google DeepMind**. All insights are based on publicly available information and reverse engineering research papers, blog posts, and model outputs.
+
+---
+
+## 📌 Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Model Architecture](#model-architecture)
+- [Getting Started](#getting-started)
+- [Training Setup](#training-setup)
+- [Inference Examples](#inference-examples)
+- [Data Formats](#data-formats)
+- [Citations](#citations)
+- [License](#license)
+
+---
+
+## 🧠 Overview
+
+Gemini is a family of multimodal models designed to process and reason over both language and vision inputs in a tightly integrated manner. The goal of this repo is to:
+- Provide a flexible baseline implementation of Gemini-like multi-modal transformers.
+- Support inference and fine-tuning across text, images, or mixed input streams.
+- Allow research exploration into cross-modal fusion, attention routing, and token alignment.
+
+---
+
+## ✨ Key Features
+
+- Multi-stream input processing (text and vision embeddings)
+- Dual encoder-decoder transformer blocks
+- Support for BPE (Byte Pair Encoding) and Patch embeddings
+- Image adapter modules for various vision backbones (e.g. CLIP ViT-B, ResNet)
+- Cross-attention fusion between modalities
+- LoRA + QLoRA support for lightweight fine-tuning
+- Training recipes for common datasets (e.g., VQAv2, COCO Captions, OK-VQA)
+
+---
+
+## 🧱 Model Architecture
+
 
                     +-----------------+
                     |  Vision Encoder |
@@ -27,8 +72,7 @@ Gemini is a family of multimodal models designed to process and reason over both
                     |  Image Adapter  |
                     +-----------------+
                             |
-                            v
-Text Input  ---> [Tokenizer] ---> [Text Embeddings]
+      Text Input  ---> [Tokenizer] ---> [Text Embeddings]
                             |
                             v
                     +----------------------+
@@ -42,7 +86,7 @@ Text Input  ---> [Tokenizer] ---> [Text Embeddings]
                     +----------------------+
                     |     Output Tokens    |
                     +----------------------+
-## Getting Started :
+
 Requirements
 Python 3.10+
 
