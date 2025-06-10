@@ -18,7 +18,7 @@ Gemini is a family of multimodal models designed to process and reason over both
 
 ## 🧱 Model Architecture
 
-```text
+
                     +-----------------+
                     |  Vision Encoder |
                     +-----------------+
