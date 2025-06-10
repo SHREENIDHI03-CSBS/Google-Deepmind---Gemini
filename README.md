@@ -6,6 +6,52 @@ Gemini is a family of multimodal models designed to process and reason over both
 - Support inference and fine-tuning across text, images, or mixed input streams.
 - Allow research exploration into cross-modal fusion, attention routing, and token alignment.
 
+##  Key Features
+
+- Multi-stream input processing (text and vision embeddings)
+- Dual encoder-decoder transformer blocks
+- Support for BPE (Byte Pair Encoding) and Patch embeddings
+- Image adapter modules for various vision backbones (e.g. CLIP ViT-B, ResNet)
+- Cross-attention fusion between modalities
+- LoRA + QLoRA support for lightweight fine-tuning
+- Training recipes for common datasets (e.g., VQAv2, COCO Captions, OK-VQA)
+
+## 🧱 Model Architecture
+
+```text
+                    +-----------------+
+                    |  Vision Encoder |
+                    +-----------------+
+                            |
+                    +-----------------+
+                    |  Image Adapter  |
+                    +-----------------+
+                            |
+                            v
+Text Input  ---> [Tokenizer] ---> [Text Embeddings]
+                            |
+                            v
+                    +----------------------+
+                    |  Multi-Modal Encoder |
+                    +----------------------+
+                            |
+                    +----------------------+
+                    |  Language Decoder    |
+                    +----------------------+
+                            |
+                    +----------------------+
+                    |     Output Tokens    |
+                    +----------------------+
+## Getting Started :
+Requirements
+Python 3.10+
+
+PyTorch ≥ 2.0
+
+torchvision, transformers, accelerate
+
+CUDA-enabled GPU (NVIDIA A100 or similar recommended)
+
 License
 This project is licensed under the Apache-2.0 License. See the LICENSE file for details.
 
