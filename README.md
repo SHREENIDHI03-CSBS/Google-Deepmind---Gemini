@@ -1,6 +1,6 @@
 # Google-Deepmind---Gemini
 
-Overview
+**Overview:**
 Gemini is Google DeepMind’s family of powerful, multimodal large language models. These models can process and generate text, images, audio, and even code, making them suitable for a wide range of applications—from automated research to creative content generation. This repository provides hands-on examples and helper scripts to get you started with Gemini’s API.
 
 Features
