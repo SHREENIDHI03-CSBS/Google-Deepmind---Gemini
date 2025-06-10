@@ -1,49 +1,10 @@
 # Google-Deepmind---Gemini
+## Overview :
 
-**Overview:**
-Gemini is Google DeepMind’s family of powerful, multimodal large language models. These models can process and generate text, images, audio, and even code, making them suitable for a wide range of applications—from automated research to creative content generation. This repository provides hands-on examples and helper scripts to get you started with Gemini’s API.
-
-Features
-Automated Research: Break down complex topics, fetch up-to-date information from the web, and synthesize findings into detailed reports.
-
-Content Generation: Generate text, images, and more using simple prompts.
-
-Multi-language Support: Example scripts in Python, JavaScript, Go, and Java.
-
-Interactive Demos: Try out key features and see how Gemini can enhance your workflow
-
-Prerequisites
-A Google Cloud account with access to the Gemini API.
-
-Your Gemini API key (see [official docs] for instructions).
-
-Python 3.8+, Node.js 16+, Go 1.18+, or Java 11+ (depending on your language of choice).
-
-Installation
-Clone this repository:
-git clone https://github.com/google-gemini/api-examples.git
-cd api-examples
-
-Usage
-Python Example
-python
-from google import genai
-
-client = genai.Client()
-response = client.models.generate_content(
-    model="gemini-2.0-flash",
-    contents="Summarize the latest trends in AI research."
-)
-print(response.text)
-
-Example Use Cases
-Competitive Analysis: Automatically compare products, pricing, and customer feedback.
-
-Due Diligence: Gather and summarize company data for sales or investment research.
-
-Topic Exploration: Dive deep into new subjects and generate comprehensive reports.
-
-Product Comparison: Evaluate and contrast features, performance, and reviews
+Gemini is a family of multimodal models designed to process and reason over both language and vision inputs in a tightly integrated manner. The goal of this repo is to:
+- Provide a flexible baseline implementation of Gemini-like multi-modal transformers.
+- Support inference and fine-tuning across text, images, or mixed input streams.
+- Allow research exploration into cross-modal fusion, attention routing, and token alignment.
 
 License
 This project is licensed under the Apache-2.0 License. See the LICENSE file for details.
